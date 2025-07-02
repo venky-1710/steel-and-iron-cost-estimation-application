@@ -25,7 +25,7 @@ import {
   Edit,
   Trash2
 } from 'lucide-react';
-import { estimatesAPI, invoicesAPI, usersAPI } from '../../services/api';
+import { estimatesAPI, invoicesAPI, usersAPI, statsAPI } from '../../services/api';
 import { useApi, useApiMutation } from '../../hooks/useApi';
 import './Dashboard.css';
 

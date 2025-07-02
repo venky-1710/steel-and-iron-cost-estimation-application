@@ -15,6 +15,8 @@ import authRoutes from './routes/auth.js';
 import estimateRoutes from './routes/estimates.js';
 import invoiceRoutes from './routes/invoices.js';
 import userRoutes from './routes/users.js';
+import statsRoutes from './routes/stats.js';
+import contactRoutes from './routes/contact.js';
 
 const app = express();
 
@@ -89,6 +91,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/estimates', estimateRoutes);
 app.use('/api/invoices', invoiceRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/stats', statsRoutes);
+app.use('/api/contact', contactRoutes);
 
 // 404 handler
 app.use((req, res, next) => {

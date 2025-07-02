@@ -174,4 +174,13 @@ export const usersAPI = {
   delete: (id) => api.delete(`/api/users/${id}`),
 };
 
+export const statsAPI = {
+  getPublicStats: () => api.get('/api/stats/public'),
+  getDashboardStats: () => api.get('/api/stats/dashboard'),
+};
+
+export const contactAPI = {
+  submitContactForm: (data) => api.post('/api/contact', data),
+};
+
 export default api;
