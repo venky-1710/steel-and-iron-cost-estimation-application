@@ -1,6 +1,6 @@
 import express from 'express';
 import nodemailer from 'nodemailer';
-import { emailConfig } from '../config/email.js';
+import { createEmailTransporter } from '../config/email.js';
 import logger from '../utils/logger.js';
 
 const router = express.Router();
@@ -23,11 +23,11 @@ router.post('/', async (req, res) => {
 
   try {
     // Create email transporter
-    const transporter = nodemailer.createTransport(emailConfig);
+    const transporter = createEmailTransporter();
 
     // Email content
     const mailOptions = {
-      from: emailConfig.auth.user,
+      from: process.env.EMAIL_FROM || process.env.SMTP_USER,
       to: process.env.CONTACT_EMAIL || 'builtestimate@gmail.com',
       subject: `[Contact Form] New inquiry from ${name}`,
       html: `
