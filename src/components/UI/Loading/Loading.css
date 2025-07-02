@@ -1,0 +1,155 @@
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.loading-spinner {
+  display: inline-block;
+  position: relative;
+}
+
+.loading-ring {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  animation: loading-spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-style: solid;
+  border-color: currentColor transparent transparent transparent;
+}
+
+.loading-ring:nth-child(1) { animation-delay: -0.45s; }
+.loading-ring:nth-child(2) { animation-delay: -0.3s; }
+.loading-ring:nth-child(3) { animation-delay: -0.15s; }
+
+/* Sizes */
+.loading-xs {
+  width: 16px;
+  height: 16px;
+}
+
+.loading-xs .loading-ring {
+  width: 16px;
+  height: 16px;
+  margin: 2px;
+  border-width: 2px;
+}
+
+.loading-sm {
+  width: 24px;
+  height: 24px;
+}
+
+.loading-sm .loading-ring {
+  width: 24px;
+  height: 24px;
+  margin: 3px;
+  border-width: 2px;
+}
+
+.loading-md {
+  width: 40px;
+  height: 40px;
+}
+
+.loading-md .loading-ring {
+  width: 40px;
+  height: 40px;
+  margin: 4px;
+  border-width: 3px;
+}
+
+.loading-lg {
+  width: 64px;
+  height: 64px;
+}
+
+.loading-lg .loading-ring {
+  width: 64px;
+  height: 64px;
+  margin: 6px;
+  border-width: 4px;
+}
+
+.loading-xl {
+  width: 80px;
+  height: 80px;
+}
+
+.loading-xl .loading-ring {
+  width: 80px;
+  height: 80px;
+  margin: 8px;
+  border-width: 5px;
+}
+
+/* Colors */
+.loading-primary {
+  color: #3b82f6;
+}
+
+.loading-secondary {
+  color: #6b7280;
+}
+
+.loading-success {
+  color: #10b981;
+}
+
+.loading-danger {
+  color: #ef4444;
+}
+
+.loading-warning {
+  color: #f59e0b;
+}
+
+.loading-white {
+  color: white;
+}
+
+.loading-text {
+  color: #6b7280;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.loading-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+@keyframes loading-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
